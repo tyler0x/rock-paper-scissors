@@ -1,5 +1,5 @@
 
-/* Function for the computer to randomly return rock, paper, or scissors.*/
+/* Function for the computer to randomly return a string value of rock, paper, or scissors.*/
 
 function getComputerChoice () {
     let computerSelection = Math.floor((Math.random() * 3) +1);
@@ -22,7 +22,7 @@ function playRound (computerSelection, playerSelection) {
     } else if (computerSelection === 'paper' && playerSelection === 'scissors' || computerSelection === 'rock' && playerSelection === 'paper' || computerSelection === 'scissors' && playerSelection === 'rock') {
         return result = 'You win!'
     } else {
-        return result = 'Did you spell that right? Type in "Rock", "Paper", or "Scissors" to play.'
+        return result = 'Did you spell that right? Type in "Rock", "Paper", or "Scissors" to play. No points for anyone this round.'
     }
 }
 
@@ -37,9 +37,9 @@ function game() {
         if (i <= 5) {
             getComputerChoice();
             let computerSelection = getComputerChoice()
-            let playerSelection = prompt('Rock, Paper, or Scissors? Your choice please: ', '').toLowerCase()
-            console.log(`You chose ${playerSelection}`);
-            console.log(`The computer chose ${computerSelection}`);
+            let playerSelection = prompt('Welcome to "Rock, Paper, Scissors!" To play, type in your choice here: ', '').toLowerCase()
+            console.log(`You chose "${playerSelection}".`);
+            console.log(`The computer chose "${computerSelection}".`);
             playRound(computerSelection, playerSelection);
             console.log(result);
                 if (result === "You win!") {
@@ -47,14 +47,14 @@ function game() {
                 } else if (result === "The computer wins.") {
                     computerScore++;
                 }
-            console.log (`Your score is ${playerScore}`);
-            console.log (`The computer's score is ${computerScore}`);    
+            console.log (`Your score is ${playerScore}.`);
+            console.log (`The computer's score is ${computerScore}.`);    
         }
     }
     if (playerScore > computerScore) {
         return 'GG! You won the game!';
     } else if (computerScore > playerScore) {
-        return 'The computer won. Womp womp.';
+        return 'The computer won. Womp, womp.';
     } else {
         return 'The game is a tie!';
     }
