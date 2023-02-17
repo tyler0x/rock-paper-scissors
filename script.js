@@ -27,16 +27,32 @@ let playerSelection = prompt('Rock, Paper, or Scissors? Your choice please: ', '
 
 function playRound (computerSelection, playerSelection) {
     if (computerSelection === 'rock' && playerSelection === 'rock' || computerSelection === 'paper' && playerSelection === 'paper' || computerSelection === 'scissors' && playerSelection === 'scissors') {
-        return "It's a tie!"
+        return result = "It's a tie!"
     } else if (computerSelection === 'paper' && playerSelection === 'rock' || computerSelection === 'rock' && playerSelection === 'scissors' || computerSelection === 'scissors' && playerSelection === 'paper') {
-        return 'The computer wins.'
+        return result = 'The computer wins.'
     } else if (computerSelection === 'paper' && playerSelection === 'scissors' || computerSelection === 'rock' && playerSelection === 'paper' || computerSelection === 'scissors' && playerSelection === 'rock') {
-        return 'You win!'
+        return result = 'You win!'
     } else {
-        return 'Please enter a valid choice to play the game: "Rock", "Paper", or "Scissors".'
+        return result = 'Please enter a valid choice to play the game: "Rock", "Paper", or "Scissors".'
     }
 }
 
-console.log(`The computer chose ${computerSelection}`);
-console.log(`You chose ${playerSelection}`);
-console.log (playRound(computerSelection, playerSelection));
+/* Create a new function called game() 
+    Call the playRound function
+    Loop it 5 times
+    Keep score of who wins
+    Report a winner or loser at the end*/
+
+function game() {
+    for (i = 0; i <= 5; i++) {
+        if (i <= 5) {
+            getComputerChoice();
+            let playerSelection = prompt('Rock, Paper, or Scissors? Your choice please: ', '').toLowerCase()
+            console.log(playerSelection);
+            console.log(computerSelection);
+            playRound(computerSelection, playerSelection);
+            console.log(result);
+        } 
+
+    }
+}
