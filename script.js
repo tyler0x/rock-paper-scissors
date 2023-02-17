@@ -22,11 +22,12 @@ function playRound (computerSelection, playerSelection) {
     } else if (computerSelection === 'paper' && playerSelection === 'scissors' || computerSelection === 'rock' && playerSelection === 'paper' || computerSelection === 'scissors' && playerSelection === 'rock') {
         return result = 'You win!'
     } else {
-        return result = 'Please enter a valid choice to play the game: "Rock", "Paper", or "Scissors".'
+        return result = 'Did you spell that right? Type in "Rock", "Paper", or "Scissors" to play.'
     }
 }
 
-/* Function to loop the round 5 times into a "game" */
+/* Function to loop the round 5 times into a "game" and keep score while doing it.
+    Then present the winner once the loop is complete. */
 
 function game() {
     let playerScore = 0;
@@ -49,5 +50,12 @@ function game() {
             console.log (`Your score is ${playerScore}`);
             console.log (`The computer's score is ${computerScore}`);    
         }
+    }
+    if (playerScore > computerScore) {
+        return 'GG! You won the game!';
+    } else if (computerScore > playerScore) {
+        return 'The computer won. Womp womp.';
+    } else {
+        return 'The game is a tie!';
     }
 }
