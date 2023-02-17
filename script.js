@@ -1,8 +1,5 @@
 
-/* Function for the computer to randomly return rock, paper, or scissors.
-
-    Create a function called "getComputerChoice"
-    Randomly return rock or paper or scissors */
+/* Function for the computer to randomly return rock, paper, or scissors.*/
 
 function getComputerChoice () {
     let computerSelection = Math.floor((Math.random() * 3) +1);
@@ -15,15 +12,7 @@ function getComputerChoice () {
         }  
 }
 
-/* Function to play a single round of Rock Paper Scissors
-
-    Create a playerSelection variable that prompts the player for a selection
-    The playerSelection parameter should be case-insensitive
-    Create a function that takes two parameters: playerSelection and computerSelection
-    Return a string that declares the winner of the round*/
-
-let computerSelection = getComputerChoice()
-let playerSelection = prompt('Rock, Paper, or Scissors? Your choice please: ', '').toLowerCase()
+/* Function to play a single round of Rock Paper Scissors */
 
 function playRound (computerSelection, playerSelection) {
     if (computerSelection === 'rock' && playerSelection === 'rock' || computerSelection === 'paper' && playerSelection === 'paper' || computerSelection === 'scissors' && playerSelection === 'scissors') {
@@ -37,22 +26,28 @@ function playRound (computerSelection, playerSelection) {
     }
 }
 
-/* Create a new function called game() 
-    Call the playRound function
-    Loop it 5 times
-    Keep score of who wins
-    Report a winner or loser at the end*/
+/* Function to loop the round 5 times into a "game" */
 
 function game() {
-    for (i = 0; i <= 5; i++) {
+    let playerScore = 0;
+        computerScore = 0;
+
+    for (i = 1; i <= 5; i++) {
         if (i <= 5) {
             getComputerChoice();
+            let computerSelection = getComputerChoice()
             let playerSelection = prompt('Rock, Paper, or Scissors? Your choice please: ', '').toLowerCase()
-            console.log(playerSelection);
-            console.log(computerSelection);
+            console.log(`You chose ${playerSelection}`);
+            console.log(`The computer chose ${computerSelection}`);
             playRound(computerSelection, playerSelection);
             console.log(result);
-        } 
-
+                if (result === "You win!") {
+                    playerScore++;
+                } else if (result === "The computer wins.") {
+                    computerScore++;
+                }
+            console.log (`Your score is ${playerScore}`);
+            console.log (`The computer's score is ${computerScore}`);    
+        }
     }
 }
