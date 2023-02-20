@@ -15,12 +15,18 @@ function getComputerChoice () {
 /* Function to play a single round of Rock Paper Scissors */
 
 function playRound (computerSelection, playerSelection) {
-    if (computerSelection === 'rock' && playerSelection === 'rock' || computerSelection === 'paper' && playerSelection === 'paper' || computerSelection === 'scissors' && playerSelection === 'scissors') {
-        return result = "It's a tie!"
-    } else if (computerSelection === 'paper' && playerSelection === 'rock' || computerSelection === 'rock' && playerSelection === 'scissors' || computerSelection === 'scissors' && playerSelection === 'paper') {
-        return result = 'The computer wins.'
-    } else if (computerSelection === 'paper' && playerSelection === 'scissors' || computerSelection === 'rock' && playerSelection === 'paper' || computerSelection === 'scissors' && playerSelection === 'rock') {
-        return result = 'You win!'
+    if (computerSelection === 'rock' && playerSelection === 'rock' || 
+    computerSelection === 'paper' && playerSelection === 'paper' || 
+    computerSelection === 'scissors' && playerSelection === 'scissors') {
+        return result = "It's a tie!";
+    } else if (computerSelection === 'paper' && playerSelection === 'rock' || 
+    computerSelection === 'rock' && playerSelection === 'scissors' || 
+    computerSelection === 'scissors' && playerSelection === 'paper') {
+        return result = 'The computer wins.';
+    } else if (computerSelection === 'paper' && playerSelection === 'scissors' || 
+    computerSelection === 'rock' && playerSelection === 'paper' || 
+    computerSelection === 'scissors' && playerSelection === 'rock') {
+        return result = 'You win!';
     } else {
         return result = 'Did you spell that right? Type in "Rock", "Paper", or "Scissors" to play. No points for anyone this round.'
     }
@@ -36,8 +42,8 @@ function game() {
     for (i = 1; i <= 5; i++) {
         if (i <= 5) {
             getComputerChoice();
-            let computerSelection = getComputerChoice()
-            let playerSelection = prompt('Welcome to "Rock, Paper, Scissors!" To play, type in your choice here: ', '').toLowerCase()
+            let computerSelection = getComputerChoice();
+            let playerSelection = prompt('Welcome to "Rock, Paper, Scissors!" To play, type in your choice here: ', '').toLowerCase();
             console.log(`You chose "${playerSelection}".`);
             console.log(`The computer chose "${computerSelection}".`);
             playRound(computerSelection, playerSelection);
